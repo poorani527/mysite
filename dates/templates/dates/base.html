@@ -1,0 +1,17 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <form action="{% url 'search_form' %}" method="POST">
+        {% csrf_token %}
+        <label for="id">ID</label>
+        <input type="number" name="id"><br>
+        <label for="name">Name</label>
+        <input type="text" name="name"><br>
+        <label for="phone">Phone Number</label>
+        <input type="text" name="phone"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="{% url 'show' %}">show details</a>
+</div>
+{% endblock %}

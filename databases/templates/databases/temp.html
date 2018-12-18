@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+    <head>
+        <title>
+            databases
+        </title>
+    </head>
+    <body>
+        <form name="fields" method="POST" action="{% url 'db' %}">
+                {% csrf_token %}
+            <span>Enter your name:</span>
+            <input type="text" name="name"><br>
+            <span>Enter your user_id </span>
+            <input type="number" name="user_id"><br>
+            <span>Mark1</span>
+            <input type="number" name="num1"><br>
+            <span>Mark2</span>
+            <input type="number" name="num2"><br>
+            <span>Mark3</span>
+            <input type="number" name="num3"><br>
+            <input type="submit" value="submit">            
+        </form>
+    </body>
+</html>

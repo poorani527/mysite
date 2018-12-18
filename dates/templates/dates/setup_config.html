@@ -1,0 +1,135 @@
+<html>
+<head>
+</head>
+<body>
+<div class="main-content container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-head-default">
+			    <h2 class="pae-head-title">Configuration</h2>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default panel-border-color panel-border-color-primary">
+                <div class="panel-heading panel-heading-divider">
+                    <div class="row">
+                        <div class="col-md-6">
+                                Rolling Year
+                        </div>
+                        <div class="col-md-6">
+                                Rolling Delta Year
+                        </div>
+                    </div>
+                </div>
+                    <form action="{% url 'app_config' %}" method="POST" class="group-border-dashed">
+                            {% for item in values %}
+                        <div class="panel-body panel-heading-divider">
+                                    {% csrf_token %}
+                            <div class="row"><div class="col-md-12">&nbsp;</div></div>
+                            <div class="row">
+                                <div class="col-md-3 form-group">
+                                    <label>Start Date</label>
+                                    <div data-min-view="2" data-date-format="yyyy-mm-dd" class="input-group date datetimepicker">
+                                        <input size="16" type="text"  class="form-control" name="ry_start" value="{{item.ry_start|date:'d-m-Y'}}"><span class="input-group-addon btn btn-default"><i class="icon-th mdi mdi-calendar"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 form-group">
+                                    <label>End Date</label>
+                                    <div data-min-view="2" data-date-format="yyyy-mm-dd" class="input-group date datetimepicker">
+                                        <input size="16" type="text"  class="form-control" name="ry_end" value="{{item.ry_end|date:'d-m-Y'}}"><span class="input-group-addon btn btn-default"><i class="icon-th mdi mdi-calendar"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 form-group">
+                                        <label>Start Date</label>
+                                        <div data-min-view="2" data-date-format="yyyy-mm-dd" class="input-group date datetimepicker">
+                                            <input size="16" type="text"  class="form-control" name="ry_d_start" value="{{item.ryd_start|date:'d-m-Y'}}"><span class="input-group-addon btn btn-default"><i class="icon-th mdi mdi-calendar"></i></span>
+                                        </div>
+                                </div>
+                                <div class="col-md-3 form-group">
+                                    <label>End Date</label>
+                                    <div data-min-view="2" data-date-format="yyyy-mm-dd" class="input-group date datetimepicker">
+                                        <input size="16" type="text"  class="form-control" name="ry_d_end" value="{{item.ryd_end|date:'d-m-Y'}}"><span class="input-group-addon btn btn-default"><i class="icon-th mdi mdi-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-heading panel-heading-divider">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                            Current Month Range
+                                    </div>
+                                    <div class="col-md-6">
+                                            Current Delta Month Range
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body panel-heading-divider">
+                                    {% csrf_token %}
+                            <div class="row"><div class="col-md-12">&nbsp;</div></div>
+                            <div class="row">
+                                <div class="col-md-3 form-group">
+                                    <label>Start Date</label>
+                                    <div data-min-view="2" data-date-format="yyyy-mm-dd" class="input-group date datetimepicker">
+                                        <input size="16" type="text"  class="form-control" name="cr_start" value="{{item.cr_start|date:'d-m-Y'}}"><span class="input-group-addon btn btn-default"><i class="icon-th mdi mdi-calendar"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 form-group">
+                                    <label>End Date</label>
+                                    <div data-min-view="2" data-date-format="yyyy-mm-dd" class="input-group date datetimepicker">
+                                        <input size="16" type="text"  class="form-control" name="cr_end" value="{{item.cr_end|date:'d-m-Y'}}"><span class="input-group-addon btn btn-default"><i class="icon-th mdi mdi-calendar"></i></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 form-group">
+                                        <label>Start Date</label>
+                                        <div data-min-view="2" data-date-format="yyyy-mm-dd" class="input-group date datetimepicker">
+                                            <input size="16" type="text"  class="form-control" name="cr_d_start" value="{{item.crd_start|date:'d-m-Y'}}"><span class="input-group-addon btn btn-default"><i class="icon-th mdi mdi-calendar"></i></span>
+                                        </div>
+                                </div>
+                                <div class="col-md-3 form-group">
+                                    <label>End Date</label>
+                                    <div data-min-view="2" data-date-format="yyyy-mm-dd" class="input-group date datetimepicker">
+                                        <input size="16" type="text"  class="form-control" name="cr_d_end" value="{{item.crd_end|date:'d-m-Y'}}"><span class="input-group-addon btn btn-default"><i class="icon-th mdi mdi-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-heading panel-heading-divider">
+                            <div class="row">
+                                <div class="col-md-12">
+                                        Quarter Text
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body panel-heading-divider">
+                                {% csrf_token %}
+                        <div class="row"><div class="col-md-12">&nbsp;</div></div>
+                        <div class="row">
+                            <div class="col-md-3 form-group">
+                                <label>Current Quarter</label>
+                                <div data-min-view="2" class="input-group">
+                                    <input size="16" type="text"  class="form-control" name="cr_quarter" value="{{item.cr_quarter}}">
+                                </div>
+                            </div>
+                            <div class="col-md-3 form-group">
+                                <label>Previous Quarter</label>
+                                <div data-min-view="2" class="input-group">
+                                    <input size="16" type="text"  class="form-control" name="pre_quarter" value="{{item.pre_quarter}}">
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="panel-footer">
+							<button type="submit" class="btn btn-space btn-primary" type="button"  id="submit_id">Submit</button>
+                        </div>
+                        {% endfor %}
+                    </form>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

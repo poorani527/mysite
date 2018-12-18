@@ -1,0 +1,25 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+<div>
+        <table border="1">
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Phone number</th>
+                </tr>
+                {% for item in values %}
+                <tr> 
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.phone }}</td>
+                    <td><a href="{% url 'delete' item.id %}">delete</a></td>
+                    <td><a href="{% url 'search_form1' item.id %}">edit</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+            <form action="{% url 'search_form' %}">
+                 <button class="btn btn-primary">back to form</button>
+            </form>
+</div>
+{% endblock %}
